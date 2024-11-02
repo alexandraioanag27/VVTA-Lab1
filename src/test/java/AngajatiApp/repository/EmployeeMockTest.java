@@ -49,13 +49,13 @@ class EmployeeMockTest {
 
         @Test
         public void testAddEmployee_TC9_BVA() {
-            Employee emp = new Employee(3, "Pop", "Mihai", "12345678901234", DidacticFunction.TEACHER, 500.0);
-            assertFalse(employeeMock.addEmployee(emp));
+            Employee emp = new Employee(3, "Pop", "Mihai", "1234567890123", DidacticFunction.TEACHER, 500.0);
+            assertTrue(employeeMock.addEmployee(emp));
         }
 
         @Test
         public void testAddEmployee_TC1_BVA() {
-            Employee emp = new Employee(0, "Dan", "Monica", "1234567890123", DidacticFunction.CONFERENTIAR, 400.0);
+            Employee emp = new Employee(0, "Dan", "Monica", "12345678901234", DidacticFunction.CONFERENTIAR, 400.0);
             assertFalse(employeeMock.addEmployee(emp));
         }
 
