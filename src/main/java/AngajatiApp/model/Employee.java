@@ -41,6 +41,15 @@ public class Employee {
 		this.salary    = salary;
 	}
 
+	public Employee(String firstName, String lastName, String cnp, DidacticFunction function, Double salary) {
+
+		this.firstName = firstName;
+		this.nume  = lastName;
+		this.cnp       = cnp;
+		this.function  = function;
+		this.salary    = salary;
+	}
+
 
 	public int getId() {
 		return idEmployee;

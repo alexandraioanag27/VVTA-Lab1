@@ -4,6 +4,7 @@ import AngajatiApp.controller.DidacticFunction;
 import AngajatiApp.model.Employee;
 import AngajatiApp.repository.EmployeeImpl;
 //import repository.EmployeeMock;
+import AngajatiApp.repository.EmployeeMock;
 import AngajatiApp.repository.EmployeeRepositoryInterface;
 
 import java.util.Scanner;
@@ -23,6 +24,8 @@ public class StartApp {
 		EmployeeRepositoryInterface employeesRepository = new EmployeeImpl();
 		EmployeeController employeeController = new EmployeeController(employeesRepository);
 		scanner = new Scanner(System.in);
+		EmployeeMock employeeMock = new EmployeeMock();
+		System.out.println(employeeMock.getEmployeeList());
 		while (true) {
 			employeeController.printMenu();
 			int command;

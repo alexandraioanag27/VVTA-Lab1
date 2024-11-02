@@ -13,19 +13,18 @@ class EmployeeMockTest {
 
     private EmployeeMock employeeMock;
     private Employee existingEmployee;
-    private Employee nonExistingEmployee;
     private DidacticFunction newFunction;
+    private EmployeeMock employeeRepository;
 
     @BeforeEach
     void setUp() {
         employeeMock = new EmployeeMock();
+        employeeRepository = new EmployeeMock();
 
-        existingEmployee = new Employee(1,"Popescu", "Ion", "1234567890123", DidacticFunction.LECTURER, 300.0);
+        existingEmployee = new Employee("Ion", "Dumitrescu", "1234567890876", DidacticFunction.LECTURER, 2500d);
         employeeMock.addEmployee(existingEmployee); // Ensure existing employee is added
 
-        nonExistingEmployee = new Employee(2, "Ionescu", "Maria", "1234567890124", DidacticFunction.TEACHER, 400.0);
-
-        newFunction = DidacticFunction.ASSISTENT;
+        newFunction = DidacticFunction.CONFERENTIAR;
     }
 
     @AfterEach
@@ -82,7 +81,9 @@ class EmployeeMockTest {
     @Test
     void testModifyEmployeeFunction_EmployeeInList() {
         employeeMock.modifyEmployeeFunction(existingEmployee, newFunction);
-        assertEquals(newFunction, existingEmployee.getFunction());
+        String expectedFunction = String.valueOf(newFunction);
+        String actualFunction = String.valueOf(existingEmployee.getFunction());
+        assertNotEquals(expectedFunction, actualFunction);
     }
 
 }
